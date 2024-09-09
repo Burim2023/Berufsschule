@@ -3,11 +3,11 @@
 Author: Burim Shala <br>
 LBS Eibiswald | 2aAPC
 
-Nur eine Demo Anwendung...<br>
-Hier könnte die Anwendung erklärt werden...
+Dies ist eine einfache Demo-Anwendung, die als Beispiel für grundlegende Softwareentwicklungsprinzipien dient.<br>
+An dieser Stelle könnte eine detailliertere Beschreibung der Funktionsweise und des Zwecks der Anwendung stehen.
 
 ## Installation
-
+Um die neueste Version vom Master-Branch zu klonen und die Anwendung zu installieren, folge diesen Schritten:
 ```cmd
 
 git checkout origin/master
@@ -22,6 +22,10 @@ Technologien im Einsatz:
 ```php
 
 //some source code configuration
+$config = [
+    'setting1' => 'value1',
+    'setting2' => 'value2',
+];
 
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -33,7 +37,7 @@ Technologien im Einsatz:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## License
-
+Diese Software ist unter der MIT-Lizenz lizenziert.
 [MIT](https://choosealicense.com/licenses/mit/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -42,4 +46,3 @@ Technologien im Einsatz:
 [java.com]: https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white
 [java-url]: https://www.java.com/de/
 [product-screenshot]: images/main.png
-test change
