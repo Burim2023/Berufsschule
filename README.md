@@ -1,5 +1,5 @@
 <a name="readme-top"></a>
-# HelloWorld
+# Vorlage
 Author: Burim Shala <br>
 LBS Eibiswald | 2aAPC
 
@@ -33,9 +33,9 @@ Technologien im Einsatz:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## License
-Diese Software ist unter der MIT-Lizenz lizenziert.
-[MIT](https://choosealicense.com/licenses/mit/)
+## Quellen
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
