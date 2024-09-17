@@ -44,7 +44,7 @@ public static void main(String[] args) {
 
 ## Quellen
 
-[Anleitung-GUI]https://examples.javacodegeeks.com/java-development/desktop-java/ide/intellij-gui-designer-example/ "GUI-Anleitung")
+[Anleitung-GUI](https://examples.javacodegeeks.com/java-development/desktop-java/ide/intellij-gui-designer-example/ "GUI-Anleitung")
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
