@@ -38,13 +38,13 @@ public static void main(String[] args) {
 
 ## Screenshots
 
-[![Screen Shot][product-screenshot]](Screenshot.png)
+<p>Die Screenshots sind in der abgegebenen PDF vorhanden.</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Quellen
 
-[Link Text](https://examples.javacodegeeks.com/java-development/desktop-java/ide/intellij-gui-designer-example/ "GUI-Anleitung")
+[Anleitung-GUI]https://examples.javacodegeeks.com/java-development/desktop-java/ide/intellij-gui-designer-example/ "GUI-Anleitung")
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
