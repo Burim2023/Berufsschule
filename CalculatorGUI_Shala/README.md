@@ -10,7 +10,7 @@ Die Anwendung ermöglicht grundlegende arithmetische Operationen wie Addition, S
 Um die neueste Version vom Master-Branch zu klonen und die Anwendung zu installieren, folge diesen Schritten:
 ```cmd
 
-git clone https://github.com/dein-repo/calculator-gui.git
+git clone https://github.com/Burim2023/Berufsschule/tree/main/CalculatorGUI_Shala
 git checkout origin/master
 
 ```
