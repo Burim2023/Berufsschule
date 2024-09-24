@@ -68,7 +68,8 @@ Sobald die Anwendung gestartet ist, stehen die folgenden Funktionen zur Verfügu
 ## Screenshots:
 
 ![Screenshot der Online Banking Anwendung](Einzahlen_auszahlen.png)
-![Screenshot der Online Banking Anwendung](Überweisen.png)
+
+![Screenshot der Online Banking Anwendung-Überweisung](Überweisung.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
