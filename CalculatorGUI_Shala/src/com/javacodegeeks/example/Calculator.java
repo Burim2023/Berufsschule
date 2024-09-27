@@ -1,3 +1,12 @@
+/*
+* Project: CalculatorGUI
+* Klasse: 2 aApc
+* Author: Burim Shala
+* Last change:
+* by: Shala
+* date: 17.09.2024
+* */
+
 package com.javacodegeeks.example;
 
 import javax.swing.*;
