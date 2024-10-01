@@ -1,3 +1,11 @@
+/*
+* Project: KontoverwaltungGUI
+* Klasse: 2 aApc
+* Author: Burim Shala
+* Last change:
+* by: Shala
+* date: 24.09.2024
+* */
 public class Sparkonto extends Konto {
     // Konstruktor zum Initialisieren eines Sparkontos
     public Sparkonto(String kontoinhaber, String bankleitzahl, String kontonummer, double kontostand) {
