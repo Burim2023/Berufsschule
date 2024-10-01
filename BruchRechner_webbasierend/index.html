@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraction Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Fraction Calculator</h1>
+        
+
+        <div class="calculator">
+            <div class="fraction-row">
+                <div class="fraction-group">
+                    <label for="numerator1">Bruch 1:</label>
+                    <div class="fraction-input">
+                        <input type="number" id="numerator1" placeholder="0">
+                        <div class="fraction-line"></div>
+                        <input type="number" id="denominator1" placeholder="0">
+                    </div>
+                </div>
+
+                <div class="fraction-group">
+                    <label for="numerator2">Bruch 2:</label>
+                    <div class="fraction-input">
+                        <input type="number" id="numerator2" placeholder="0">
+                        <div class="fraction-line"></div>
+                        <input type="number" id="denominator2" placeholder="0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button onclick="calculate('+')">+</button>
+                <button onclick="calculate('-')">-</button>
+                <button onclick="calculate('*')">×</button>
+                <button onclick="calculate('/')">÷</button>
+            </div>
+
+            <textarea id="result" readonly>Ergebnis wird hier angezeigt...</textarea>
+        </div>
+
+        <div class="control-buttons">
+            <button onclick="clearFields()">Clear</button>
+            <button onclick="resetCalculator()">Reset</button>
+            <button onclick="undo()">Undo</button>
+        </div>
+
+        <!-- Neuer Button zum Öffnen der PDF-Dokumentation -->
+        <div class="doc-button">
+            <button onclick="openDocumentation()">Öffne Dokumentation</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
