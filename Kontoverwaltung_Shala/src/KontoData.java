@@ -1,3 +1,11 @@
+/*
+* Project: KontoverwaltungGUI
+* Klasse: 2 aApc
+* Author: Burim Shala
+* Last change:
+* by: Shala
+* date: 24.09.2024
+* */
 public class KontoData {
     private String kontoArt;      // Art des Kontos (Girokonto, Sparkonto, Kreditkonto)
     private String kontonummer;   // Kontonummer
