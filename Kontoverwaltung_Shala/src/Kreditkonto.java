@@ -1,3 +1,11 @@
+/*
+* Project: KontoverwaltungGUI
+* Klasse: 2 aApc
+* Author: Burim Shala
+* Last change:
+* by: Shala
+* date: 24.09.2024
+* */
 public class Kreditkonto extends Konto {
     private double kreditlimit;  // Kreditlimit des Kreditkontos
 
