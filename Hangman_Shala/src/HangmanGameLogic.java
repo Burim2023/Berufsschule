@@ -15,7 +15,7 @@ public class HangmanGameLogic {
     private String[] wordList = {"apple", "banana", "orange", "grape", "mango"};
     private String currentWord;
     private char[] guessedWord;
-    private List<Character> guessedLetters = new ArrayList<>();
+    private StringBuilder letterHistory;
     private int attempts;
     private int maxAttempts;
 
@@ -25,29 +25,26 @@ public class HangmanGameLogic {
     }
 
     public void resetGame() {
-        // Wähle ein zufälliges Wort aus der Liste
-        currentWord = wordList[new Random().nextInt(wordList.length)];
+        currentWord = wordList[(int)(Math.random() * wordList.length)];
         guessedWord = new char[currentWord.length()];
-        Arrays.fill(guessedWord, '_');
-        guessedLetters.clear();
+        letterHistory = new StringBuilder();
         attempts = 0;
+        for (int i = 0; i < guessedWord.length; i++) {
+            guessedWord[i] = '_';
+        }
     }
 
-    public boolean checkGuess(String guess) {
-        if (guess.length() != 1) return false;
-        char letter = guess.charAt(0);
-
-        // Wenn der Buchstabe schon geraten wurde
-        if (guessedLetters.contains(letter)) {
-            return true;  // Buchstabe wurde bereits eingegeben
+    public boolean checkGuess(String letter) {
+        char guessedLetter = letter.charAt(0);
+        if (letterHistory.toString().contains(Character.toString(guessedLetter))) {
+            return true;  // Der Buchstabe wurde bereits geraten
         }
 
-        guessedLetters.add(letter);
+        letterHistory.append(guessedLetter);
         boolean correctGuess = false;
-
         for (int i = 0; i < currentWord.length(); i++) {
-            if (currentWord.charAt(i) == letter) {
-                guessedWord[i] = letter;
+            if (currentWord.charAt(i) == guessedLetter) {
+                guessedWord[i] = guessedLetter;
                 correctGuess = true;
             }
         }
@@ -55,8 +52,7 @@ public class HangmanGameLogic {
         if (!correctGuess) {
             attempts++;
         }
-
-        return false;  // Buchstabe wurde noch nicht geraten
+        return false;
     }
 
     public String getWordProgress() {
@@ -68,15 +64,23 @@ public class HangmanGameLogic {
     }
 
     public String getHistory() {
-        return guessedLetters.toString();
+        return letterHistory.toString();
+    }
+
+    public boolean hasWon() {
+        return currentWord.equals(new String(guessedWord));
     }
 
     public boolean isGameOver() {
-        return attempts >= maxAttempts || new String(guessedWord).equals(currentWord);
+        return attempts >= maxAttempts;
     }
 
     public void setMaxAttempts(int maxAttempts) {
         this.maxAttempts = maxAttempts;
+    }
+
+    public String getCurrentWord() {
+        return currentWord;
     }
 }
 
