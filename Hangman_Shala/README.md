@@ -245,14 +245,15 @@ Diese Klasse stellt die Benutzeroberfläche des Spiels bereit und verarbeitet di
 
 ## Screenshots
 
+<p>Hier sieht man einen Screenshot, bei dem der Spieler das Wort erraten hat.<br></p>
 
-<p>Hier siehst du ein Screenshot der Benutzeroberfläche, nachdem der Spieler einige Buchstaben eingegeben hat.<br></p>
 
-<p>![Win-View][Hangman_Win_View.png]</p>
+![Win-View](hangman_Win.png)
 
-<p>Hier sieht man einen Screenshot bei dem der Spieler das Wort erraten hat.<br></p>
+<p>Hier siehst du ein Screenshot der Benutzeroberfläche, nachdem der Spieler verloren hat.<br></p>
 
-<p>![DoubleInput-View][Hangman_Dialog_secondTimeInput.png]</p>
+![DoubleInput-View](Hangman_Gameover.png)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Projektstruktur
