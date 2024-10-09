@@ -247,9 +247,12 @@ Diese Klasse stellt die Benutzeroberfläche des Spiels bereit und verarbeitet di
 
 
 <p>Hier siehst du ein Screenshot der Benutzeroberfläche, nachdem der Spieler einige Buchstaben eingegeben hat.<br></p>
-![Win-View][Hangman_Win_View.png]
+
+<p>![Win-View][Hangman_Win_View.png]</p>
+
 <p>Hier sieht man einen Screenshot bei dem der Spieler das Wort erraten hat.<br></p>
-![DoubleInput-View][Hangman_Dialog_secondTimeInput.png]
+
+<p>![DoubleInput-View][Hangman_Dialog_secondTimeInput.png]</p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Projektstruktur
