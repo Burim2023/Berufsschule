@@ -7,17 +7,11 @@
  * date: 16.10.2024
  * */
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Verbindungsinformationen
-        String url = "jdbc:mysql://127.0.0.1:3306/uebungen"; // Host, Port und Datenbankname anpassen
-
+        String url = "jdbc:mysql://127.0.0.1:3306/uebungen";
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter username: ");
@@ -26,36 +20,15 @@ public class Main {
         System.out.print("Enter password: ");
         String password = scanner.nextLine();
 
-        // Verbindung herstellen
-        try (Connection connection = DriverManager.getConnection(url, user, password)) {
-            if (connection != null) {
+        try (Connection db_connection = Connector.getConnection(url, user, password)) {
+            if (db_connection != null) {
                 System.out.println("Verbindung zur MariaDB erfolgreich hergestellt!");
+                Tables.selectAllFromPersonTable(db_connection);
             } else {
-                System.out.println("Verbindung zur MariaDB fehlgeschlagen.");
+                System.out.println("Verbindung fehlgeschlagen.");
             }
-
-            // Alle Einträge aus der Tabelle t_person auswählen
-            String sql = "SELECT id, vname, name FROM t_person";
-            try (PreparedStatement p = connection.prepareStatement(sql);
-                 ResultSet rs = p.executeQuery()) {
-                // Spalten dynamisch ausgeben
-                int columnCount = rs.getMetaData().getColumnCount();
-                for (int i = 1; i <= columnCount; i++) {
-                    System.out.print(rs.getMetaData().getColumnName(i) + "\t");
-                }
-                System.out.println();
-
-                while (rs.next()) {
-                    int id = rs.getInt("id");
-                    String vname = rs.getString("vname");
-                    String name = rs.getString("name");
-                    System.out.println(id + "\t" + vname + "\t" + name);
-                }
-            } catch (SQLException e) {
-                System.out.println("SQL Exception: " + e.getMessage());
-            }
-        } catch (SQLException e) {
-            System.out.println("SQL Exception: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Fehler: " + e.getMessage());
         }
     }
 }
