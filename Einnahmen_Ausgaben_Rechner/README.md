@@ -71,6 +71,14 @@ Diese Klasse ist für die Verbindung zur Datenbank und die Datenbankoperationen 
 - **getAllBuchungen()**: Ruft alle Buchungen aus der Datenbank ab und gibt sie als zweidimensionales Array zurück, um sie in der GUI anzuzeigen.
 
 ```java
+/*
+ * Project: Buchungs-Applikation
+ * Klasse: 2 aApc
+ * Author: Burim Shala
+ * Last change:
+ * by: Shala
+ * date: 23.10.2024
+ * */
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -133,6 +141,14 @@ Diese Klasse ist für die grafische Benutzeroberfläche verantwortlich. Sie erm�
 - **searchBtn.addActionListener()**: Sucht nach Buchungen innerhalb eines bestimmten Datumsbereichs und zeigt die Ergebnisse in der Tabelle an.
 
 ```java
+/*
+ * Project: Buchungs-Applikation
+ * Klasse: 2 aApc
+ * Author: Burim Shala
+ * Last change:
+ * by: Shala
+ * date: 23.10.2024
+ * */
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
