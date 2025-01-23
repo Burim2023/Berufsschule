@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week Planner</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+    }
+    .day-column {
+      border: 1px solid #ddd;
+      padding: 10px;
+      background-color: #f9f9f9;
+      min-height: 200px;
+    }
+    .entry {
+      padding: 5px;
+      margin: 5px 0;
+      border-radius: 5px;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Week Planner</h1>
+    <button class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#entryModal">Add Entry</button>
+    
+    <div class="week-grid">
+      <div class="day-column" id="monday"><strong>Monday</strong></div>
+      <div class="day-column" id="tuesday"><strong>Tuesday</strong></div>
+      <div class="day-column" id="wednesday"><strong>Wednesday</strong></div>
+      <div class="day-column" id="thursday"><strong>Thursday</strong></div>
+      <div class="day-column" id="friday"><strong>Friday</strong></div>
+      <div class="day-column" id="saturday"><strong>Saturday</strong></div>
+      <div class="day-column" id="sunday"><strong>Sunday</strong></div>
+    </div>
+  </div>
+
+  <!-- Modal for Adding Entry -->
+  <div class="modal fade" id="entryModal" tabindex="-1" aria-labelledby="entryModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="entryModalLabel">Add Entry</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="entryForm">
+            <div class="mb-3">
+              <label for="topic" class="form-label">Topic</label>
+              <input type="text" class="form-control" id="topic" required>
+            </div>
+            <div class="mb-3">
+              <label for="room" class="form-label">Room</label>
+              <input type="text" class="form-control" id="room" required>
+            </div>
+            <div class="mb-3">
+              <label for="people" class="form-label">People</label>
+              <input type="text" class="form-control" id="people" required>
+            </div>
+            <div class="mb-3">
+              <label for="class" class="form-label">Class</label>
+              <input type="text" class="form-control" id="class" required>
+            </div>
+            <div class="mb-3">
+              <label for="time" class="form-label">Time</label>
+              <input type="time" class="form-control" id="time" required>
+            </div>
+            <div class="mb-3">
+              <label for="teacher" class="form-label">Teacher</label>
+              <input type="text" class="form-control" id="teacher" required>
+            </div>
+            <div class="mb-3">
+              <label for="day" class="form-label">Day</label>
+              <select class="form-select" id="day" required>
+                <option value="monday">Monday</option>
+                <option value="tuesday">Tuesday</option>
+                <option value="wednesday">Wednesday</option>
+                <option value="thursday">Thursday</option>
+                <option value="friday">Friday</option>
+                <option value="saturday">Saturday</option>
+                <option value="sunday">Sunday</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="color" class="form-label">Entry Color</label>
+              <input type="color" class="form-control" id="color" value="#007bff">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Entry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const entryForm = document.getElementById('entryForm');
+
+    entryForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const topic = document.getElementById('topic').value;
+      const room = document.getElementById('room').value;
+      const people = document.getElementById('people').value;
+      const classInfo = document.getElementById('class').value;
+      const time = document.getElementById('time').value;
+      const teacher = document.getElementById('teacher').value;
+      const day = document.getElementById('day').value;
+      const color = document.getElementById('color').value;
+
+      const dayColumn = document.getElementById(day);
+
+      const entry = document.createElement('div');
+      entry.className = 'entry';
+      entry.style.backgroundColor = color;
+      entry.innerHTML = `
+        <strong>${topic}</strong><br>
+        Room: ${room}<br>
+        People: ${people}<br>
+        Class: ${classInfo}<br>
+        Time: ${time}<br>
+        Teacher: ${teacher}
+      `;
+
+      dayColumn.appendChild(entry);
+
+      // Reset the form and close the modal
+      entryForm.reset();
+      const modal = bootstrap.Modal.getInstance(document.getElementById('entryModal'));
+      modal.hide();
+    });
+  </script>
+</body>
+</html>
