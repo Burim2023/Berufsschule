@@ -40,7 +40,6 @@
       color: white;
       font-size: 14px;
       position: relative;
-      background-color: #007bff;
     }
     .delete-btn {
       position: absolute;
@@ -61,7 +60,6 @@
       color: #fff;
       font-size: 14px;
     }
-
     /* Print Styles */
     @media print {
       body {
@@ -108,7 +106,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="entryModalLabel">Add/Edit Entry</h5>
+          <h5 class="modal-title" id="entryModalLabel">Add Entry</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -153,18 +151,75 @@
               <label for="color" class="form-label">Entry Color</label>
               <input type="color" class="form-control" id="color" value="#007bff">
             </div>
-            <button type="submit" class="btn btn-primary">Save Entry</button>
+            <button type="submit" class="btn btn-primary w-100">Save Entry</button>
           </form>
         </div>
       </div>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    function windowPrint() {
-      window.print();
-    }
+    const entryForm = document.getElementById('entryForm');
+    let currentEntry = null;
+
+    // Save or edit entry
+    entryForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const topic = document.getElementById('topic').value;
+      const room = document.getElementById('room').value;
+      const people = document.getElementById('people').value;
+      const classValue = document.getElementById('class').value;
+      const time = document.getElementById('time').value;
+      const teacher = document.getElementById('teacher').value;
+      const day = document.getElementById('day').value;
+      const color = document.getElementById('color').value;
+
+      const dayColumn = document.getElementById(day);
+
+      if (currentEntry) {
+        // Edit entry
+        currentEntry.innerHTML = `<b>${topic}</b><br>Room: ${room}<br>People: ${people}<br>Class: ${classValue}<br>Time: ${time}<br>Teacher: ${teacher}`;
+        currentEntry.style.backgroundColor = color;
+        currentEntry = null;
+      } else {
+        // Create new entry
+        const newEntry = document.createElement('div');
+        newEntry.classList.add('entry');
+        newEntry.style.backgroundColor = color;
+        newEntry.innerHTML = `<b>${topic}</b><br>Room: ${room}<br>People: ${people}<br>Class: ${classValue}<br>Time: ${time}<br>Teacher: ${teacher} <button class="delete-btn">x</button>`;
+        
+        // Delete functionality
+        newEntry.querySelector('.delete-btn').addEventListener('click', function () {
+          newEntry.remove();
+        });
+
+        // Edit functionality
+        newEntry.addEventListener('dblclick', function () {
+          currentEntry = newEntry;
+          document.getElementById('topic').value = topic;
+          document.getElementById('room').value = room;
+          document.getElementById('people').value = people;
+          document.getElementById('class').value = classValue;
+          document.getElementById('time').value = time;
+          document.getElementById('teacher').value = teacher;
+          document.getElementById('day').value = day;
+          document.getElementById('color').value = color;
+
+          const modal = new bootstrap.Modal(document.getElementById('entryModal'));
+          modal.show();
+        });
+
+        dayColumn.appendChild(newEntry);
+      }
+
+      // Reset form and close modal
+      entryForm.reset();
+      const modal = bootstrap.Modal.getInstance(document.getElementById('entryModal'));
+      modal.hide();
+    });
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
